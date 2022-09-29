@@ -8,4 +8,4 @@ import random
 
 setup(zipfile=None,
       options={"py2exe" : {"bundle_files" : 1}},
-      console={"tres_r.py"})
+      console={"tres_rV1.1.py"})
