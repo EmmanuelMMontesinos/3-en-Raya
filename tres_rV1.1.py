@@ -273,7 +273,7 @@ def final():
     if ghna == [] and len(jdispo) == [] :
         reiniciar()
     
-    else:
+    if ghna != []:
         for uv in ghna:
             for iv in uv:
                 jugan.append(iv)
@@ -281,7 +281,8 @@ def final():
                 for jsa in jdispo:
                     if g == jsa:
                         return g
-        
+    if ghna == [] and jdispo != []:
+        return random.choice(jdispo)
 
     
     
@@ -327,8 +328,7 @@ def enemigo(jj1):
                                 jndispo.append(numero)
                                 jndispo = sorted(jndispo)
                                 return numero
-    elif len(jndispo) == 0:
-        return random.choice(jdispo)
+    
     return final()
     
                         
@@ -544,8 +544,7 @@ def main():
                     sleep(1)
                     reiniciar()
                     jugador_actual = JUGADOR2
-                elif ronda == None:                   
-                    pass
+                
                     
         if jugador_actual == JUGADOR2:
             cpu = enemigo(jj1)
